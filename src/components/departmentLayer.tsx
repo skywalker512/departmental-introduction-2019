@@ -6,7 +6,7 @@ const DepartmentLayer: React.FC = ({ children }) => {
     <Fragment>
       <div className={styles.backgroundDyeing}></div>
       <div className={styles.backgroundGrid}></div>
-      { children }
+      <div className={styles.children}>{children}</div>
     </Fragment>
   )
 }

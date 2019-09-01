@@ -1,0 +1,105 @@
+@backgroundColor: rgba(130, 218, 246, 0.66);
+@decorateColor: rgba(199, 252, 255, 0.47);
+@fontColor: rgba(80, 25, 161, 0.76);
+@borderColor: rgba(130, 218, 246, 0.88);
+
+.content {
+  margin-top: 45px;
+  background-color: @backgroundColor;
+  height: 42px;
+  width: 285px;
+  text-align: end;
+  position: relative;
+  border: 2px solid @borderColor;
+  border-right-width: 0;
+  border-left-width: 0;
+  box-sizing: border-box;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-bottom: 38px solid @backgroundColor;
+    border-right: 38px solid transparent;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 42px;
+    top: -2px;
+    bottom: -2px;
+    right: -21px;
+    transform: skew(45deg);
+    background: transparent;
+    border: 2px solid @borderColor;
+    border-top-width: 0;
+    border-left-width: 0;
+    box-sizing: border-box;
+  }
+
+  span {
+    font-family: 'Tensentype ChaoHeiJ';
+    color: @fontColor;
+    font-size: 24px;
+    line-height: 38px;
+    font-style: italic;
+    margin-right: 10px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 5px;
+      top: 0;
+      bottom: 0;
+      left: -25px;
+      position: absolute;
+      transform: skew(-15deg);
+      background-color: @decorateColor;
+    }
+
+    &::after {
+      content: '';
+      width: 7px;
+      top: 0;
+      bottom: 0;
+      left: -15px;
+      position: absolute;
+      transform: skew(-15deg);
+      background-color: @decorateColor;
+    }
+  }
+}
+
+.divider {
+  height: 3px;
+  margin-top: 5px;
+  width: 325px;
+  background: rgba(130, 218, 246, 0.2);
+
+  div {
+    height: 100%;
+    width: 100%;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: linear-gradient(
+      to left,
+      rgba(130, 218, 246, 0),
+      rgba(130, 218, 246, 1),
+      rgba(130, 218, 246, 0)
+    );
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -975px 0;
+  }
+  100% {
+    background-position: 975px 0;
+  }
+}

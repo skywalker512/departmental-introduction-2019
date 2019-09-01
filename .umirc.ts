@@ -25,8 +25,8 @@ const config: IConfig = {
   ],
   extraPostCSSPlugins: [
     pxToViewPort({
-      viewportWidth: 375,
-      viewportHeight: 667,
+      viewportWidth: 1280,
+      viewportHeight: 720,
       unitPrecision: 5,
       viewportUnit: 'vw',
       selectorBlackList: [],

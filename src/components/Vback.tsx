@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import styles from './Vback.less'
-import useAnimation from '@/utilites/useAnimation'
 
 const VBack: React.FC = () => {
   return (

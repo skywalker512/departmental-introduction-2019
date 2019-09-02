@@ -11,18 +11,33 @@
   position: absolute;
 }
 
-.backgroundGrid {
+.backgroundOrigin {
+  background-image: url('../assets/img/departmentBackgroundOrigin.png');
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 2;
+  background-size: cover;
+  background-color: #021114;
+  background-position: center;
+  position: absolute;
+  transition: clip-path 1s;
+}
+
+.backgroundGrid {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
   position: absolute;
   background-image: url('../assets/img/departmentBackgroundGrid.png');
   background-repeat: repeat;
   background-position: center top;
   background-attachment: fixed;
   background-size: 128px 128px;
+  transition: clip-path 1s;
 }
 
 .children {
@@ -30,6 +45,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 3;
+  z-index: 4;
   position: absolute;
 }

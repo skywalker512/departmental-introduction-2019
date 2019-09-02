@@ -9,14 +9,14 @@ interface IProps {
 }
 
 const Silder: React.FC<IProps> = ({ name, mark }) => {
-  const width = useSpring({width: `${mark}%`, from: {width: '0%'}})
-  const left = useSpring({left: `${mark}%`, from: {left: '0%'}})
+  const widthAnmation = useSpring({width: `${mark}%`, from: {width: '0%'}})
+  const leftAnmation = useSpring({left: `${mark}%`, from: {left: '0%'}})
   return (
     <div className={styles.sider}>
       <span>{name}</span>
       <div className={styles.siderBackgroud}>
-        <animated.div className={styles.siderHighlight} style={width}/>
-        <animated.div className={styles.siderBall} style={left} />
+        <animated.div className={styles.siderHighlight} style={widthAnmation}/>
+        <animated.div className={styles.siderBall} style={leftAnmation} />
       </div>
     </div>
   )

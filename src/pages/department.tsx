@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { RCProps } from '@/interface/router'
 import departments from '@/json/department'
 import styles from './department.less'
-import { IRouterQuery, IDetailBoxProps } from '@/interface/department'
+import { IRouterQuery, IDetailBoxProps, ISliderProps } from '@/interface/department'
 
 import DepartmentLayer from '@/components/departmentLayer'
 import VBack from '@/components/Vback'
@@ -15,6 +15,7 @@ import IconArt from '@/assets/img/departmentIconArt.png'
 import IconPhone from '@/assets/img/departmentIconPhone.png'
 import IconEarth from '@/assets/img/departmentIconEarth.png'
 import IconSre from '@/assets/img/departmentIconSre.png'
+import DepartmentSlider from '@/components/departmentSlider'
 
 const SelectionControl: React.FC = () => {
   return (
@@ -48,15 +49,15 @@ const SelectionControl: React.FC = () => {
   )
 }
 
-const DetailBox: React.FC<IDetailBoxProps> = ({ name, detail }) => {
+const DetailBox: React.FC<IDetailBoxProps> = ({ name, detail, mark }) => {
   return (
     <div className={styles.detailBox}>
       <DepartmentTitle>{name}介绍</DepartmentTitle>
       <DepartmentDetail>{detail}</DepartmentDetail>
+      <DepartmentSlider {...mark} />
     </div>
   )
 }
-
 
 const DepartmentPage: React.FC<RCProps<IRouterQuery>> = ({ location }) => {
   const index = parseInt(location.query.index)
@@ -65,7 +66,11 @@ const DepartmentPage: React.FC<RCProps<IRouterQuery>> = ({ location }) => {
       <DepartmentLayer>
         <VBack />
         <SelectionControl />
-        <DetailBox name={departments[index].name} detail={departments[index].detail} />
+        <DetailBox
+          name={departments[index].name}
+          detail={departments[index].detail}
+          mark={departments[index].mark}
+        />
       </DepartmentLayer>
     </Fragment>
   )

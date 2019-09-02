@@ -5,6 +5,7 @@ export interface IRouterQuery {
 export interface IDetailBoxProps {
   name: string
   detail: string
+  mark: ISliderProps
 }
 
 export interface ISliderProps {

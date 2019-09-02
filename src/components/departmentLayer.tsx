@@ -1,17 +1,9 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment } from 'react'
 import styles from './departmentLayer.less'
+import useProcess from '@/utilites/useProcess'
 
 const DepartmentLayer: React.FC = ({ children }) => {
-  const [isProcessed, setProcess] = useState(false)
-  const requestRef: any = React.useRef();
-
-  useEffect(()=>{
-    requestRef.current = setTimeout(()=>{
-      setProcess(true)
-    }, 0)
-    return () => clearTimeout(requestRef.current)
-  }, [])
-
+  const isProcessed = useProcess()
 
   return (
     <Fragment>

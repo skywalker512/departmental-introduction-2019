@@ -16,33 +16,47 @@ import IconPhone from '@/assets/img/departmentIconPhone.png'
 import IconEarth from '@/assets/img/departmentIconEarth.png'
 import IconSre from '@/assets/img/departmentIconSre.png'
 import DepartmentSlider from '@/components/departmentSlider'
+import { Link } from 'react-router-dom'
+import useRouter from '@/utilites/useRouter'
 
 const SelectionControl: React.FC = () => {
+  const router = useRouter<{ index: string }>()
+  const index = parseInt(router.param.index)
   return (
     <div className={styles.selectionControl}>
       <div className={styles.iconBrain}>
         <DepartmentButton>
-          <img src={IconBrain} alt='IconBrain'/>
+          <Link to='/department?index=0'>
+            <img src={IconBrain} alt='IconBrain' style={index===0? { opacity: 1 } :{}}/>
+          </Link>
         </DepartmentButton>
       </div>
       <div className={styles.iconArt}>
         <DepartmentButton>
-          <img src={IconArt} alt='IconArt'/>
+          <Link to='/department?index=1'>
+            <img src={IconArt} alt='IconArt' style={index===1? { opacity: 1 } :{}}/>
+          </Link>
         </DepartmentButton>
       </div>
       <div className={styles.iconPhone}>
         <DepartmentButton>
-          <img src={IconPhone} alt='IconPhone'/>
+          <Link to='/department?index=2'>
+            <img src={IconPhone} alt='IconPhone' style={index===2? { opacity: 1 } :{}}/>
+          </Link>
         </DepartmentButton>
       </div>
       <div className={styles.iconEarth}>
         <DepartmentButton>
-          <img src={IconEarth} alt='IconEarth'/>
+          <Link to='/department?index=3'>
+            <img src={IconEarth} alt='IconEarth' style={index===3? { opacity: 1 } :{}}/>
+          </Link>
         </DepartmentButton>
       </div>
       <div className={styles.iconSre}>
         <DepartmentButton>
-          <img src={IconSre} alt='IconSre'/>
+          <Link to='/department?index=4'>
+            <img src={IconSre} alt='IconSre' style={index===4? { opacity: 1 } :{}}/>
+          </Link>
         </DepartmentButton>
       </div>
     </div>

@@ -9,8 +9,8 @@ interface IProps {
 }
 
 const Silder: React.FC<IProps> = ({ name, mark }) => {
-  const widthAnmation = useSpring({width: `${mark}%`, from: {width: '0%'}})
-  const leftAnmation = useSpring({left: `${mark}%`, from: {left: '0%'}})
+  const widthAnmation = useSpring({width: `${mark}%`, from: {width: '0%'}, config: { duration: 500 }})
+  const leftAnmation = useSpring({left: `${mark}%`, from: {left: '0%'}, config: { duration: 500 }})
   return (
     <div className={styles.sider}>
       <span>{name}</span>

@@ -1,10 +1,17 @@
 import React, { Fragment } from 'react'
 import styles from './Vback.less'
+import router from 'umi/router';
 
 const VBack: React.FC = () => {
+  const handelBackClick = () => {
+    router.push({
+      pathname: '/'
+    })
+  }
+
   return (
     <Fragment>
-      <div className={styles.content}>
+      <div className={styles.content} onClick={handelBackClick}>
         <span>返回</span>
       </div>
       <div className={styles.divider}>

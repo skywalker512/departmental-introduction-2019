@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import styles from './dapartmentDetail.less'
 
 const DepartmentDetail: React.FC = ({ children }) => {
@@ -11,7 +11,7 @@ const DepartmentDetail: React.FC = ({ children }) => {
     const animate = (time: number) => {
       if (previousTimeRef.current != undefined) {
         const deltaTime = time - previousTimeRef.current;
-        count = (count + deltaTime * 0.05)
+        count = (count + deltaTime * 0.2)
         setPText(text.slice(0, Math.round(count)))
       }
       previousTimeRef.current = time;
@@ -24,8 +24,10 @@ const DepartmentDetail: React.FC = ({ children }) => {
       requestRef.current = requestAnimationFrame(animate);
       return () => cancelAnimationFrame(requestRef.current);
     }, []);
-
-    return <p>{pText}</p>
+    return (<Fragment>
+      <p style={{ opacity: pText.length < text.length ? 1 : 0, position: 'absolute' }}>{pText}</p>
+      <p style={{ opacity: pText.length < text.length ? 0 : 1 }}>{text}</p>
+    </Fragment>)
   }
 
   return (

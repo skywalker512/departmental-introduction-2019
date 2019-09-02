@@ -8,10 +8,10 @@ const VBack: React.FC = () => {
         <span>返回</span>
       </div>
       <div className={styles.divider}>
-        <div></div>
+        <div/>
       </div>
       <div className={styles.divider}>
-        <div></div>
+        <div/>
       </div>
     </Fragment>
   )

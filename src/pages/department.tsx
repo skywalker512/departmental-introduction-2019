@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { RCProps } from '@/interface/router'
 import departments from '@/json/department'
 import styles from './department.less'
-import { IRouterQuery, IDetailBoxProps, ISliderProps } from '@/interface/department'
+import { IRouterQuery, IDetailBoxProps } from '@/interface/department'
 
 import DepartmentLayer from '@/components/departmentLayer'
 import VBack from '@/components/Vback'
@@ -22,27 +22,27 @@ const SelectionControl: React.FC = () => {
     <div className={styles.selectionControl}>
       <div className={styles.iconBrain}>
         <DepartmentButton>
-          <img src={IconBrain} />
+          <img src={IconBrain} alt='IconBrain'/>
         </DepartmentButton>
       </div>
       <div className={styles.iconArt}>
         <DepartmentButton>
-          <img src={IconArt} />
+          <img src={IconArt} alt='IconArt'/>
         </DepartmentButton>
       </div>
       <div className={styles.iconPhone}>
         <DepartmentButton>
-          <img src={IconPhone} />
+          <img src={IconPhone} alt='IconPhone'/>
         </DepartmentButton>
       </div>
       <div className={styles.iconEarth}>
         <DepartmentButton>
-          <img src={IconEarth} />
+          <img src={IconEarth} alt='IconEarth'/>
         </DepartmentButton>
       </div>
       <div className={styles.iconSre}>
         <DepartmentButton>
-          <img src={IconSre} />
+          <img src={IconSre} alt='IconSre'/>
         </DepartmentButton>
       </div>
     </div>

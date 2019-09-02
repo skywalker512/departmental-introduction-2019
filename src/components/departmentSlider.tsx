@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './departmentSlider.less'
 import { ISliderProps } from '@/interface/department'
+import {useSpring, animated} from 'react-spring'
 
 interface IProps {
   name: string
@@ -8,12 +9,14 @@ interface IProps {
 }
 
 const Silder: React.FC<IProps> = ({ name, mark }) => {
+  const width = useSpring({width: `${mark}%`, from: {width: '0%'}})
+  const left = useSpring({left: `${mark}%`, from: {left: '0%'}})
   return (
     <div className={styles.sider}>
       <span>{name}</span>
       <div className={styles.siderBackgroud}>
-        <div className={styles.siderHighlight} style={{ width: `${mark}%` }}></div>
-        <div className={styles.siderBall} style={{ left: `${mark}%` }}></div>
+        <animated.div className={styles.siderHighlight} style={width}/>
+        <animated.div className={styles.siderBall} style={left} />
       </div>
     </div>
   )

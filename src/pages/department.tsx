@@ -2,23 +2,19 @@ import React, { Fragment } from 'react'
 import { RCProps } from '@/interface/router'
 import departments from '@/json/department'
 import styles from './department.less'
+import { IRouterQuery, IDetailBoxProps } from '@/interface/department'
 
 import DepartmentLayer from '@/components/departmentLayer'
 import VBack from '@/components/Vback'
 import DepartmentButton from '@/components/departmentButton'
+import DepartmentTitle from '@/components/departmentTitle'
+import DepartmentDetail from '@/components/dapartmentDetail'
 
 import IconBrain from '@/assets/img/departmentIconBrain.png'
 import IconArt from '@/assets/img/departmentIconArt.png'
 import IconPhone from '@/assets/img/departmentIconPhone.png'
 import IconEarth from '@/assets/img/departmentIconEarth.png'
 import IconSre from '@/assets/img/departmentIconSre.png'
-import DepartmentTitle from '@/components/departmentTitle';
-import DepartmentDetail from '@/components/dapartmentDetail';
-
-
-interface IRouterQuery {
-  index: string
-}
 
 const SelectionControl: React.FC = () => {
   return (
@@ -52,12 +48,7 @@ const SelectionControl: React.FC = () => {
   )
 }
 
-interface IDetailBoxProps {
-  name: string
-  detail: string
-}
-
-const DetailBox: React.FC<IDetailBoxProps>  = ({ name, detail }) => {
+const DetailBox: React.FC<IDetailBoxProps> = ({ name, detail }) => {
   return (
     <div className={styles.detailBox}>
       <DepartmentTitle>{name}介绍</DepartmentTitle>
@@ -65,6 +56,7 @@ const DetailBox: React.FC<IDetailBoxProps>  = ({ name, detail }) => {
     </div>
   )
 }
+
 
 const DepartmentPage: React.FC<RCProps<IRouterQuery>> = ({ location }) => {
   const index = parseInt(location.query.index)

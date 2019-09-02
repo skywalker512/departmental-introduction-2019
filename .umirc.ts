@@ -1,4 +1,5 @@
 import { IConfig } from 'umi-types'
+// @ts-ignore
 import pxToViewPort from 'postcss-px-to-viewport'
 
 // ref: https://umijs.org/config/

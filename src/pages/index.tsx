@@ -6,8 +6,17 @@ import IndexLayer from '@/components/indexLayer'
 import Swiper from 'react-id-swiper'
 import { SwiperOptions } from 'swiper'
 import styles from './index.less'
+import router from 'umi/router'
 
 const IndexPage: React.FC = () => {
+  const handelDepartmentClick = (index: number) => {
+    router.push({
+      pathname: '/department',
+      query: {
+        index,
+      }
+    })
+  }
     const params: SwiperOptions =  {
       // 切换效果
       effect: 'coverflow',
@@ -27,23 +36,16 @@ const IndexPage: React.FC = () => {
         slideShadows: true
       },
     }
+  // @ts-ignore
   return (
     <Fragment>
-      {/*{departments.map((department, index) => (*/}
-      {/*  <Link key={department.id} to={`/department?index=${index}`}>*/}
-      {/*    {department.name}*/}
-      {/*  </Link>*/}
-      {/*))}*/}
       <IndexLayer>
         <div className={styles.swiperWapper}>
           <div className={styles.swiperWapper2}>
             <Swiper {...params} containerClass={styles.swiperContainer}>
-              <div className={styles.designItem} />
-              <div className={styles.designItem} />
-              <div className={styles.designItem} />
-              <div className={styles.designItem} />
-              <div className={styles.designItem} />
-              <div className={styles.designItem} />
+              {departments.map((department, index) => (
+                <div className={styles.designItem} onClick={()=>handelDepartmentClick(index)}/>
+              ))}
             </Swiper>
           </div>
         </div>

@@ -2,6 +2,8 @@ import { IConfig } from 'umi-types'
 // @ts-ignore
 import pxToViewPort from 'postcss-px-to-viewport'
 
+
+
 // ref: https://umijs.org/config/
 const config: IConfig = {
   treeShaking: true,
@@ -32,8 +34,8 @@ const config: IConfig = {
       viewportUnit: 'vw',
       selectorBlackList: [],
       minPixelValue: 1,
-      mediaQuery: false,
-    }),
+      mediaQuery: true,
+    })
   ],
 }
 

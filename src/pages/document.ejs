@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Your App</title>
+    <meta name="x5-orientation" content="portrait">
+    <meta name="screen-orientation" content="portrait">
+    <style>
+        #full {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #021114;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        #re {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #021114;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+<div id="full"><div>轻触即可全屏浏览</div></div>
+<div id="re"><div>请旋转屏幕以观看</div></div>
+<div id="root"></div>
+<script>
+  var fullElement = document.getElementById('full')
+  var reElement = document.getElementById('re')
+  var Fullscreen = function() {
+    function launchFullscreen(element) {
+      if(element.requestFullscreen) {
+        element.requestFullscreen()
+      } else if(element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if(element.msRequestFullscreen){
+        element.msRequestFullscreen();
+      } else if(element.webkitRequestFullscreen) {
+        element.webkitRequestFullScreen();
+      }
+    }
+    launchFullscreen(document.documentElement);
+  }
+  fullElement.addEventListener('click', ()=> {
+    Fullscreen()
+    fullElement.style.cssText = 'display: none;'
+    detectOrient();
+    window.onresize = detectOrient;
+  })
+
+  var detectOrient = function() {
+    var width = document.documentElement.clientWidth,
+      height =  document.documentElement.clientHeight;
+    if( width >= height ){ // 横屏
+      reElement.style.cssText = 'display: none;'
+    }
+    else{ // 竖屏
+      reElement.style.cssText = ''
+    }
+  }
+</script>
+
+</body>
+</html>

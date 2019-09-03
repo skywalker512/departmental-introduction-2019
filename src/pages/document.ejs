@@ -41,6 +41,7 @@
 <script>
   var fullElement = document.getElementById('full')
   var reElement = document.getElementById('re')
+  var event = new Event('orient');
   var Fullscreen = function() {
     function launchFullscreen(element) {
       if(element.requestFullscreen) {
@@ -67,6 +68,7 @@
       height =  document.documentElement.clientHeight;
     if( width >= height ){ // 横屏
       reElement.style.cssText = 'display: none;'
+      window.dispatchEvent(event)
     }
     else{ // 竖屏
       reElement.style.cssText = ''

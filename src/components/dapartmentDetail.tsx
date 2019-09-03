@@ -7,9 +7,10 @@ const DepartmentDetail: React.FC = ({ children }) => {
     let count = 0
     const requestRef: any = React.useRef();
     const previousTimeRef: any = React.useRef();
+    // const setTimeoutRef: any = React.useRef();
 
     const animate = (time: number) => {
-      if (previousTimeRef.current != undefined) {
+      if (previousTimeRef.current !== undefined) {
         const deltaTime = time - previousTimeRef.current;
         count = (count + deltaTime * 0.2)
         setPText(text.slice(0, Math.round(count)))
@@ -21,8 +22,14 @@ const DepartmentDetail: React.FC = ({ children }) => {
     }
 
     React.useEffect(() => {
+      // setTimeoutRef.current = setTimeout(()=>{
+      //
+      // }, 400)
       requestRef.current = requestAnimationFrame(animate);
-      return () => cancelAnimationFrame(requestRef.current);
+      return () => {
+        cancelAnimationFrame(requestRef.current)
+        // clearTimeout(setTimeoutRef.current)
+      };
     }, []);
     return (<Fragment>
       <p style={{ opacity: pText.length < text.length ? 1 : 0, position: 'absolute' }}>{pText}</p>

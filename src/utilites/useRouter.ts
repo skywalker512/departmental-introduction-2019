@@ -1,5 +1,6 @@
 function parseUrl(url: string){
   const query = url.split("?")[1];
+  if (!query) return {}
   const queryArr = query.split("&");
   let obj: any = {};
   queryArr.forEach(function(item){

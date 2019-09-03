@@ -5,7 +5,7 @@ import router from 'umi/router';
 const VBack: React.FC = () => {
   const handelBackClick = () => {
     router.push({
-      pathname: '/'
+      pathname: '/home'
     })
   }
 

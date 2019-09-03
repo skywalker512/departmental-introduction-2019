@@ -1,9 +1,9 @@
 import React from 'react'
 
-const BasicLayout: React.FC = props => {
+const BasicLayout: React.FC = ({ children }) => {
   return (
     <div>
-      {props.children}
+      {children}
     </div>
   )
 }

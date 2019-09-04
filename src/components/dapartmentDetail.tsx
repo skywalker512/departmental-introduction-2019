@@ -22,13 +22,9 @@ const DepartmentDetail: React.FC = ({ children }) => {
     }
 
     React.useEffect(() => {
-      // setTimeoutRef.current = setTimeout(()=>{
-      //
-      // }, 400)
       requestRef.current = requestAnimationFrame(animate);
       return () => {
         cancelAnimationFrame(requestRef.current)
-        // clearTimeout(setTimeoutRef.current)
       };
     }, []);
     return (<Fragment>

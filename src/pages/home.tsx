@@ -29,7 +29,7 @@ const IndexPage: React.FC = () => {
     loop: true,
     coverflowEffect: {
       rotate: 20,
-      stretch: -20,
+      stretch: -30,
       depth: -50,
       modifier: 0.6,
       slideShadows: false,

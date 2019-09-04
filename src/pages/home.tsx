@@ -28,11 +28,11 @@ const IndexPage: React.FC = () => {
     slidesPerView: 'auto',
     loop: true,
     coverflowEffect: {
-      rotate: 16,
+      rotate: 20,
       stretch: -20,
-      depth: -150,
-      modifier: 1,
-      slideShadows: true,
+      depth: -50,
+      modifier: 0.6,
+      slideShadows: false,
     },
   }
   // @ts-ignore
@@ -43,7 +43,7 @@ const IndexPage: React.FC = () => {
           <div className={styles.swiperWapper2}>
             <Swiper {...params} containerClass={styles.swiperContainer}>
               {departments.map((department, index) => (
-                <div className={styles.designItem} onClick={() => handelDepartmentClick(index)} />
+                <div className={styles.designItem} onClick={() => handelDepartmentClick(index)} key={index} />
               ))}
             </Swiper>
           </div>

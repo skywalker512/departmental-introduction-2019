@@ -25,5 +25,5 @@ script:
 
 after_success:
   - mkdir ./dist/di
-  - mv ./dist/* ./dist/di/*
+  - mv ./dist/* ./dist/di
   - upx --auth $UPX_AUTH sync --delete --strong ./dist

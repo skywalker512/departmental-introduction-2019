@@ -31,7 +31,7 @@ const Content: React.FC = () => {
         <img src={spaceshipPng} alt="spaceship" />
       </div>
       <div className={styles.word}>
-        { words.map((word, index)=><Word text={word} pText={pTexts[index]}/>) }
+        { words.map((word, index)=><Word text={word} pText={pTexts[index]} key={index}/>) }
       </div>
     </Fragment>
   )

@@ -19,7 +19,7 @@ const config: IConfig = {
         dynamicImport: false,
         title: 'departmental-introduction-2019',
         dll: false,
-
+        pwa: true,
         routes: {
           exclude: [/components\//],
         },

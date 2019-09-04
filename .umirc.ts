@@ -6,6 +6,7 @@ import pxToViewPort from 'postcss-px-to-viewport'
 
 // ref: https://umijs.org/config/
 const config: IConfig = {
+  base: './',
   treeShaking: true,
   publicPath: './',
   history: 'hash',

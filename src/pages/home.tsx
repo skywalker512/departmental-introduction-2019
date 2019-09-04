@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import departments from '@/json/department'
-import IndexLayer from '@/components/indexLayer'
+import GateLayer from '@/components/gateLayer'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Swiper from 'react-id-swiper'
 import { SwiperOptions } from 'swiper'
@@ -38,7 +38,7 @@ const IndexPage: React.FC = () => {
   // @ts-ignore
   return (
     <Fragment>
-      <IndexLayer>
+      <GateLayer>
         <div className={styles.swiperWapper}>
           <div className={styles.swiperWapper2}>
             <Swiper {...params} containerClass={styles.swiperContainer}>
@@ -48,7 +48,7 @@ const IndexPage: React.FC = () => {
             </Swiper>
           </div>
         </div>
-      </IndexLayer>
+      </GateLayer>
     </Fragment>
   )
 }

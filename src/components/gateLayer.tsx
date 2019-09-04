@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './indexLayer.less'
-const IndexLayer: React.FC = ({ children }) => {
+import styles from './gateLayer.less'
+const GateLayer: React.FC = ({ children }) => {
   return (
     <div className={styles.wapper}>
       <div className={styles.children}>{children}</div>
@@ -8,4 +8,4 @@ const IndexLayer: React.FC = ({ children }) => {
   )
 }
 
-export default IndexLayer
+export default GateLayer

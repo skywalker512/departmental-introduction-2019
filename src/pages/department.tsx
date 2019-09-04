@@ -64,6 +64,10 @@ const SelectionControl: React.FC = () => {
 }
 
 const DetailBox: React.FC<IDetailBoxProps> = ({ name, detail, mark }) => {
+  const router = useRouter<{ index: string }>()
+  if(!router.param.index) {
+    return <div />
+  }
   return (
     <div className={styles.detailBox}>
       <DepartmentTitle>{name}介绍</DepartmentTitle>

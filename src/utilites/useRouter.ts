@@ -12,6 +12,7 @@ function parseUrl(url: string){
 }
 
 export default function useRouter<Params extends { [key: string]: string }>() {
+  const href = window.location.href
   const param: Params = parseUrl(window.location.href)
-  return { param }
+  return { param, href }
 }

@@ -6,7 +6,6 @@ import Swiper from 'react-id-swiper'
 import { SwiperOptions } from 'swiper'
 import styles from './home.less'
 import router from 'umi/router'
-import initialOptions from 'jest-config/build/ValidConfig'
 
 const IndexPage: React.FC = () => {
   const handelDepartmentClick = (index: number) => {

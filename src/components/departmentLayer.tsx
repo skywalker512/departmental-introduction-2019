@@ -9,7 +9,7 @@ const DepartmentLayer: React.FC = ({ children }) => {
   React.useEffect(() => {
     setTimeoutRef.current = setTimeout(()=>{
       setShow(true)
-    }, 500)
+    }, 700)
     return () => {
       clearTimeout(setTimeoutRef.current)
     };

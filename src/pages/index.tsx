@@ -13,7 +13,7 @@ const Content: React.FC = () => {
       router.push({
         pathname: '/gate'
       })
-    }, 8000)
+    }, 7500)
     return () => {
       clearTimeout(setTimeoutRef.current)
     }

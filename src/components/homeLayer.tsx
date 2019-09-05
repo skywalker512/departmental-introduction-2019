@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './gateLayer.less'
-const GateLayer: React.FC = ({ children }) => {
+import styles from './homeLayer.less'
+const HomeLayer: React.FC = ({ children }) => {
   return (
     <div className={styles.wapper}>
       <div className={styles.children}>{children}</div>
@@ -8,4 +8,4 @@ const GateLayer: React.FC = ({ children }) => {
   )
 }
 
-export default GateLayer
+export default HomeLayer

@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import styles from './dapartmentDetail.less'
 import useWord from '@/utilites/useWord'
 

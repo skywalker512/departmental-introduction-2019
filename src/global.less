@@ -1,6 +1,10 @@
 @import './assets/font/font.less';
 @import "../node_modules/react-id-swiper/lib/styles/css/swiper.css";
 
+html {
+  touch-action: none;
+}
+
 .page-enter {
   opacity: 0;
   transform: scale(1.1);
@@ -23,6 +27,85 @@
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
   overflow: hidden;
+}
+
+//.product {
+//  background-image: url("./assets/img/productLight.png");
+//  filter: brightness(70%);
+//  &.swiper-slide-active {
+//    filter: brightness(100%);
+//  }
+//}
+//
+//
+//.design {
+//  background-image: url("./assets/img/designDark.png");
+//  &.swiper-slide-active {
+//    background-image: url("./assets/img/designLight.png");
+//  }
+//}
+//
+//.app {
+//  background-image: url("./assets/img/appDark.png");
+//  &.swiper-slide-active {
+//    background-image: url("./assets/img/appLight.png");
+//  }
+//}
+//
+//.sre {
+//  background-image: url("./assets/img/sreDark.png");
+//  &.swiper-slide-active {
+//    background-image: url("./assets/img/sreLight.png");
+//  }
+//}
+//
+//.web {
+//  background-image: url("./assets/img/webDark.png");
+//  &.swiper-slide-active {
+//    background-image: url("./assets/img/webLight.png");
+//  }
+//}
+
+
+.product {
+  background-image: url("./assets/img/productLight.png");
+  filter: brightness(60%);
+  &.swiper-slide-active {
+    filter: brightness(100%);
+  }
+}
+
+
+.design {
+  background-image: url("./assets/img/designLight.png");
+  filter: brightness(60%);
+  &.swiper-slide-active {
+    filter: brightness(100%);
+  }
+}
+
+.app {
+  background-image: url("./assets/img/appLight.png");
+  filter: brightness(60%);
+  &.swiper-slide-active {
+    filter: brightness(100%);
+  }
+}
+
+.sre {
+  background-image: url("./assets/img/sreLight.png");
+  filter: brightness(60%);
+  &.swiper-slide-active {
+    filter: brightness(100%);
+  }
+}
+
+.web {
+  background-image: url("./assets/img/webLight.png");
+  filter: brightness(60%);
+  &.swiper-slide-active {
+    filter: brightness(100%);
+  }
 }
 
 /* *

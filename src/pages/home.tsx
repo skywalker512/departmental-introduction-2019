@@ -43,7 +43,7 @@ const IndexPage: React.FC = () => {
           <div className={styles.swiperWapper2}>
             <Swiper {...params} containerClass={styles.swiperContainer}>
               {departments.map((department, index) => (
-                <div className={styles.designItem} onClick={() => handelDepartmentClick(index)} key={index} />
+                <div className={`${styles['item']} ${department.slug}`} onClick={() => handelDepartmentClick(index)} key={index} />
               ))}
             </Swiper>
           </div>

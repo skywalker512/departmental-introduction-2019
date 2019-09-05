@@ -6,6 +6,7 @@ import Swiper from 'react-id-swiper'
 import { SwiperOptions } from 'swiper'
 import styles from './home.less'
 import router from 'umi/router'
+import initialOptions from 'jest-config/build/ValidConfig'
 
 const IndexPage: React.FC = () => {
   const handelDepartmentClick = (index: number) => {
@@ -15,12 +16,14 @@ const IndexPage: React.FC = () => {
         index,
       },
     })
+    localStorage.setItem('initialSlide', String(index))
   }
+  const index = localStorage.getItem('initialSlide')
   const params: SwiperOptions = {
     // 切换效果
     effect: 'coverflow',
     // 开始图片
-    initialSlide: 2,
+    initialSlide: index ? parseInt(index) : 0,
     // 是否有手形
     grabCursor: false,
     // 激活的那个居中

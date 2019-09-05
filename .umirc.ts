@@ -24,6 +24,7 @@ const config: IConfig = {
         routes: {
           exclude: [/components\//],
         },
+        fastClick: true,
       },
     ],
   ],

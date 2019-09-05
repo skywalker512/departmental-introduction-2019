@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Your App</title>
+    <title>红岩网校部门介绍</title>
     <meta name="x5-orientation" content="portrait">
     <meta name="screen-orientation" content="portrait">
     <style>
@@ -18,6 +18,9 @@
             justify-content: center;
             align-items: center;
             z-index: 100;
+            font-size: 1.5625vh;
+            text-align: center;
+            line-height: 4vh;
         }
         #re {
             position: absolute;
@@ -31,12 +34,15 @@
             justify-content: center;
             align-items: center;
             z-index: 99;
+            font-size: 1.5625vh;
+            text-align: center;
+            line-height: 4vh;
         }
     </style>
 </head>
 <body>
 <div id="full"><div>轻触即可全屏浏览</div></div>
-<div id="re"><div>请旋转屏幕以观看</div></div>
+<div id="re"><div>请旋转屏幕以观看<br/>若没有作用请打开系统设置中的旋转屏幕<br/>如果在微信中使用请将微信通用设置中的开启横屏模式打开</div></div>
 <div id="root"></div>
 <script>
   var fullElement = document.getElementById('full')

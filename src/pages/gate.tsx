@@ -5,7 +5,7 @@ import useProcess from '@/utilites/useProcess'
 
 const IndexPage: React.FC = () => {
   const isProcess = useProcess()
-  const isProcessText = useProcess(2000)
+  const isProcessText = useProcess(5000)
   const handelEnterClick = () => {
     if (isProcessText) {
       router.push({
@@ -16,11 +16,11 @@ const IndexPage: React.FC = () => {
   return (
     <div>
       <div className={styles.backGround} style={{ transform: isProcess ? 'scale(1.5)': 'scale(1)' }}/>
-      <div className={styles.text} style={{ opacity: isProcess ? 1: 0 }}>
+      <div className={styles.text} style={{ opacity: isProcessText ? 1: 0 }}>
         推开这扇大门<br/>
         我们将带领你解析我们的多元构成
       </div>
-      <div className="spinner" onClick={handelEnterClick} style={{ opacity: isProcess ? 1: 0 }}>
+      <div className="spinner" onClick={handelEnterClick} style={{ opacity: isProcessText ? 1: 0 }}>
         <div className="double-bounce1"/>
         <div className="double-bounce2"/>
       </div>

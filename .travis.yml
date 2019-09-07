@@ -24,6 +24,6 @@ script:
   - yarn build
 
 after_success:
-  - mkdir ./dist/di
-  - mv ./dist/* ./dist/di
+  - mkdir ./dist/$DIR_NAME
+  - mv ./dist/* ./dist/$DIR_NAME
   - upx --auth $UPX_AUTH sync --delete --strong ./dist

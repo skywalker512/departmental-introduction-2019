@@ -69,6 +69,22 @@
     window.onresize = detectOrient;
   })
 
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
+
+  window.addEventListener('exitFullscreen1', () => {
+    exitFullscreen()
+  })
+
   var detectOrient = function() {
     var width = document.documentElement.clientWidth,
       height =  document.documentElement.clientHeight;

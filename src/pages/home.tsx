@@ -6,6 +6,15 @@ import Swiper from 'react-id-swiper'
 import { SwiperOptions } from 'swiper'
 import styles from './home.less'
 import router from 'umi/router'
+import spaceshipPng from '@/assets/img/spaceship.png'
+
+const SpaceShape: React.FC = () => {
+  return (
+    <div className={styles.spaceship}>
+      <img src={spaceshipPng} alt="spaceship" />
+    </div>
+  )
+}
 
 const IndexPage: React.FC = () => {
   const handelDepartmentClick = (index: number) => {
@@ -28,7 +37,7 @@ const IndexPage: React.FC = () => {
     // 激活的那个居中
     centeredSlides: true,
     slidesPerView: 'auto',
-    loopAdditionalSlides : 3,
+    loopAdditionalSlides: 3,
     on: {
       tap() {
         // @ts-ignore
@@ -48,6 +57,7 @@ const IndexPage: React.FC = () => {
   return (
     <Fragment>
       <HomeLayer>
+        <SpaceShape />
         <div className={styles.swiperWapper}>
           <div className={styles.swiperWapper2}>
             <Swiper {...params} containerClass={styles.swiperContainer}>

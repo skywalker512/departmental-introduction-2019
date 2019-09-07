@@ -18,8 +18,8 @@ const DepartmentLayer: React.FC = ({ children }) => {
   return (
     <Fragment>
       <div className={styles.backgroundDyeing}/>
-      <div className={styles.backgroundGrid} style={{ clipPath: isShow ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)' }} />
-      <div className={styles.backgroundOrigin} style={{ clipPath: isShow ? 'inset(0 0 0 100%)' : 'inset(0 0 0 0)' }} />
+      <div className={styles.backgroundGrid} style={{ clipPath: isShow ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)', WebkitClipPath:  isShow ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)' }} />
+      <div className={styles.backgroundOrigin} style={{ clipPath: isShow ? 'inset(0 0 0 100%)' : 'inset(0 0 0 0)', WebkitClipPath: isShow ? 'inset(0 0 0 100%)' : 'inset(0 0 0 0)' }} />
       { isShow ? <div className={styles.children}>{children}</div> : '' }
     </Fragment>
   )

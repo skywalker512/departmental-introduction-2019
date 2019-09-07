@@ -15,23 +15,30 @@ const IndexPage: React.FC = () => {
         index,
       },
     })
-    localStorage.setItem('initialSlide', String(index))
+    sessionStorage.setItem('initialSlide', String(index))
   }
-  const index = localStorage.getItem('initialSlide')
+  const index = sessionStorage.getItem('initialSlide')
   const params: SwiperOptions = {
     // 切换效果
     effect: 'coverflow',
     // 开始图片
-    initialSlide: index ? parseInt(index) : 0,
+    initialSlide: index ? parseInt(index) : 2,
     // 是否有手形
     grabCursor: false,
     // 激活的那个居中
     centeredSlides: true,
     slidesPerView: 'auto',
+    loopAdditionalSlides : 3,
+    on: {
+      tap() {
+        // @ts-ignore
+        handelDepartmentClick(this.activeIndex % 5)
+      },
+    },
     loop: true,
     coverflowEffect: {
       rotate: 20,
-      stretch: -30,
+      stretch: -40,
       depth: -50,
       modifier: 0.6,
       slideShadows: false,
@@ -45,7 +52,7 @@ const IndexPage: React.FC = () => {
           <div className={styles.swiperWapper2}>
             <Swiper {...params} containerClass={styles.swiperContainer}>
               {departments.map((department, index) => (
-                <div className={`${styles['item']} ${department.slug}`} onClick={() => handelDepartmentClick(index)} key={index} />
+                <div className={`${styles['item']} ${department.slug}`} key={index} />
               ))}
             </Swiper>
           </div>

@@ -8,7 +8,7 @@ const IndexPage: React.FC = () => {
   const isProcessText = useProcess(5000)
   const handelEnterClick = () => {
     if (isProcessText) {
-      router.push({
+      router.replace({
         pathname: '/home'
       })
     }

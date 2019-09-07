@@ -27,14 +27,14 @@ const SelectionControl: React.FC = () => {
     <div className={styles.selectionControl}>
       <div className={styles.iconBrain}>
         <DepartmentButton>
-          <Link to='/department?index=0'>
+          <Link to='/department?index=0' replace>
             <img src={IconBrain} alt='IconBrain' style={index===0? { opacity: 1 } :{}}/>
           </Link>
         </DepartmentButton>
       </div>
       <div className={styles.iconArt}>
         <DepartmentButton>
-          <Link to='/department?index=1'>
+          <Link to='/department?index=1' replace>
             <img src={IconArt} alt='IconArt' style={index===1? { opacity: 1 } :{}}/>
           </Link>
         </DepartmentButton>
@@ -48,14 +48,14 @@ const SelectionControl: React.FC = () => {
       </div>
       <div className={styles.iconEarth}>
         <DepartmentButton>
-          <Link to='/department?index=3'>
+          <Link to='/department?index=3' replace>
             <img src={IconEarth} alt='IconEarth' style={index===3? { opacity: 1 } :{}}/>
           </Link>
         </DepartmentButton>
       </div>
       <div className={styles.iconSre}>
         <DepartmentButton>
-          <Link to='/department?index=4'>
+          <Link to='/department?index=4' replace>
             <img src={IconSre} alt='IconSre' style={index===4? { opacity: 1 } :{}}/>
           </Link>
         </DepartmentButton>
@@ -80,7 +80,7 @@ const DetailBox: React.FC<IDetailBoxProps> = ({ name, detail, mark }) => {
 
 const EnterButton: React.FC = () => {
   const handelEnterClick = () => {
-    router.push({
+    router.replace({
       pathname:'/joinin'
     })
   }

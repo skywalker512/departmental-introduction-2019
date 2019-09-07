@@ -18,7 +18,7 @@ const SpaceShape: React.FC = () => {
 
 const IndexPage: React.FC = () => {
   const handelDepartmentClick = (index: number) => {
-    router.push({
+    router.replace({
       pathname: '/department',
       query: {
         index,

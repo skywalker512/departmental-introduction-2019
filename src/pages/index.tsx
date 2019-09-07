@@ -10,8 +10,8 @@ const Content: React.FC = () => {
   const setTimeoutRef: any = React.useRef();
   useEffect(()=>{
     setTimeoutRef.current = setTimeout(()=>{
-      router.push({
-        pathname: '/gate'
+      router.replace({
+        pathname: '/process'
       })
     }, 7500)
     return () => {

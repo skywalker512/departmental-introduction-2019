@@ -18,6 +18,7 @@ import IconSre from '@/assets/img/departmentIconSre.png'
 import DepartmentSlider from '@/components/departmentSlider'
 import { Link } from 'react-router-dom'
 import useRouter from '@/utilites/useRouter'
+import { router } from 'umi'
 
 const SelectionControl: React.FC = () => {
   const router = useRouter<{ index: string }>()
@@ -77,6 +78,19 @@ const DetailBox: React.FC<IDetailBoxProps> = ({ name, detail, mark }) => {
   )
 }
 
+const EnterButton: React.FC = () => {
+  const handelEnterClick = () => {
+    router.push({
+      pathname:'/joinin'
+    })
+  }
+  return (
+    <div className={styles.enterButton} onClick={handelEnterClick}>
+      报名
+    </div>
+  )
+}
+
 const DepartmentPage: React.FC<RCProps<IRouterQuery>> = ({ location }) => {
   const index = parseInt(location.query.index)
   return (
@@ -89,6 +103,7 @@ const DepartmentPage: React.FC<RCProps<IRouterQuery>> = ({ location }) => {
           detail={departments[index].detail}
           mark={departments[index].mark}
         />
+        <EnterButton />
       </DepartmentLayer>
     </Fragment>
   )

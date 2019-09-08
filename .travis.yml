@@ -19,9 +19,9 @@ install:
   - mkdir -p $HOME/bin; export PATH=$HOME/bin:$PATH
   - wget -O /tmp/${UPX_FILENAME} ${UPX_URL}
   - install /tmp/${UPX_FILENAME} $HOME/bin/upx
-  - yarn
+  - npm i
 script:
-  - yarn build
+  - npm run build
 
 after_success:
   - mkdir ./dist/$DIR_NAME

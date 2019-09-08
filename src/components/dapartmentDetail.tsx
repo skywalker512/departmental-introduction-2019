@@ -4,7 +4,7 @@ import useWord from '@/utilites/useWord'
 
 const DepartmentDetail: React.FC = ({ children }) => {
   const P: React.FC<{ text: string }> = ({text}) => {
-    let delay = 1700
+    let delay = 1000
     if (sessionStorage.getItem('isWordShow') === 'true') {
       delay = 0
     }

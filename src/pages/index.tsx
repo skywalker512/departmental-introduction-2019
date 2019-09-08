@@ -77,17 +77,25 @@ const Content: React.FC = () => {
   )
 }
 
-const IndexPage: React.FC = () => {
-  const [isOk, setOk] = useState(false)
+const ContentT: React.FC = () => {
   const isShowGate = useProcess(7500)
   const isHideText = useProcess(10000)
+  return (
+    <Fragment>
+      {isShowGate ? <Gate /> : ''}
+      {!isHideText ? <div className={styles.background}><Content /></div> : ''}
+    </Fragment>
+  )
+}
+
+const IndexPage: React.FC = () => {
+  const [isOk, setOk] = useState(false)
   window.addEventListener('orient', () => {
     setOk(true)
   })
   return (
     <Fragment>
-      {isShowGate ? <Gate /> : ''}{' '}
-      {!isHideText ? <div className={styles.background}>{isOk ? <Content /> : ''}</div> : ''}
+      {isOk ? <ContentT /> : ''}
     </Fragment>
   )
 }

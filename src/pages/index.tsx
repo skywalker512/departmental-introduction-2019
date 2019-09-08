@@ -3,6 +3,7 @@ import styles from './index.less'
 import router from 'umi/router'
 import spaceshipPng from '@/assets/img/spaceship.png'
 import useWord from '@/utilites/useWord'
+import TapMp3 from '@/assets/mp3/tap.mp3'
 import useProcess from '@/utilites/useProcess'
 
 const Gate: React.FC = () => {
@@ -11,7 +12,7 @@ const Gate: React.FC = () => {
   const handelEnterClick = () => {
     if (isProcessText) {
       router.replace({
-        pathname: '/home',
+        pathname: '/gate'
       })
     }
   }
@@ -93,11 +94,7 @@ const IndexPage: React.FC = () => {
   window.addEventListener('orient', () => {
     setOk(true)
   })
-  return (
-    <Fragment>
-      {isOk ? <ContentT /> : ''}
-    </Fragment>
-  )
+  return <div className={styles.background}>{isOk ? <Fragment><Content /><audio src={TapMp3} autoPlay loop /></Fragment> : ''}</div>
 }
 
 export default IndexPage

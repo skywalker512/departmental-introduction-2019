@@ -1,6 +1,6 @@
 branches:
   only:
-    - master
+    - old
 sudo: true
 dist: trusty
 language: node_js

@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import styles from './departmentLayer.less'
 import useProcess from '@/utilites/useProcess'
+import flashMp3 from '@/assets/mp3/flash.mp3'
 
 const DepartmentLayer: React.FC = ({ children }) => {
   const isShow = useProcess(1000)
@@ -14,6 +15,7 @@ const DepartmentLayer: React.FC = ({ children }) => {
   return (
     <Fragment>
       <div className={styles.backgroundDyeing} />
+      <audio src={flashMp3} autoPlay />
       <div
         className={styles.backgroundGrid}
         style={{

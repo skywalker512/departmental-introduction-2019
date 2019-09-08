@@ -18,6 +18,7 @@ import IconSre from '@/assets/img/departmentIconSre.png'
 import DepartmentSlider from '@/components/departmentSlider'
 import useRouter from '@/utilites/useRouter'
 import { router } from 'umi'
+import TapMp3 from '@/assets/mp3/tap.mp3'
 
 const SelectionControl: React.FC = () => {
   const Urouter = useRouter<{ index: string }>()
@@ -29,6 +30,8 @@ const SelectionControl: React.FC = () => {
         index
       }
     })
+    // @ts-ignore
+    document.getElementById('mp1').innerHTML=`<audio src=${TapMp3} autoplay/>`
   }
   return (
     <div className={styles.selectionControl}>

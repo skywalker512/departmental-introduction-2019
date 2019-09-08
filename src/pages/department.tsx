@@ -21,43 +21,51 @@ import useRouter from '@/utilites/useRouter'
 import { router } from 'umi'
 
 const SelectionControl: React.FC = () => {
-  const router = useRouter<{ index: string }>()
-  const index = parseInt(router.param.index)
+  const Urouter = useRouter<{ index: string }>()
+  const index = parseInt(Urouter.param.index)
+  const handelDepartmentButtonClick = (index: number) => {
+    router.replace({
+      pathname: '/department',
+      query: {
+        index
+      }
+    })
+  }
   return (
     <div className={styles.selectionControl}>
       <div className={styles.iconBrain}>
         <DepartmentButton>
-          <Link to='/department?index=0' replace>
+          <div onClick={()=>handelDepartmentButtonClick(0)}>
             <img src={IconBrain} alt='IconBrain' style={index===0? { opacity: 1 } :{}}/>
-          </Link>
+          </div>
         </DepartmentButton>
       </div>
       <div className={styles.iconArt}>
         <DepartmentButton>
-          <Link to='/department?index=1' replace>
+          <div onClick={()=>handelDepartmentButtonClick(1)}>
             <img src={IconArt} alt='IconArt' style={index===1? { opacity: 1 } :{}}/>
-          </Link>
+          </div>
         </DepartmentButton>
       </div>
       <div className={styles.iconPhone}>
         <DepartmentButton>
-          <Link to='/department?index=2'>
+          <div onClick={()=>handelDepartmentButtonClick(2)}>
             <img src={IconPhone} alt='IconPhone' style={index===2? { opacity: 1 } :{}}/>
-          </Link>
+          </div>
         </DepartmentButton>
       </div>
       <div className={styles.iconEarth}>
         <DepartmentButton>
-          <Link to='/department?index=3' replace>
+          <div onClick={()=>handelDepartmentButtonClick(3)}>
             <img src={IconEarth} alt='IconEarth' style={index===3? { opacity: 1 } :{}}/>
-          </Link>
+          </div>
         </DepartmentButton>
       </div>
       <div className={styles.iconSre}>
         <DepartmentButton>
-          <Link to='/department?index=4' replace>
+          <div onClick={()=>handelDepartmentButtonClick(4)}>
             <img src={IconSre} alt='IconSre' style={index===4? { opacity: 1 } :{}}/>
-          </Link>
+          </div>
         </DepartmentButton>
       </div>
     </div>

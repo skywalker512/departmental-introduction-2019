@@ -62,6 +62,10 @@
 <script>
   var fullElement = document.getElementById('full')
   var reElement = document.getElementById('re')
+  var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+  if (isiOS) {
+    fullElement.style.cssText = 'display: none;'
+  }
   var event = new Event('orient');
   var Fullscreen = function() {
     function launchFullscreen(element) {
@@ -81,8 +85,11 @@
     Fullscreen()
     fullElement.style.cssText = 'display: none;'
     detectOrient();
-    window.onresize = detectOrient;
   })
+
+  setTimeout(()=>{
+    window.onresize = detectOrient;
+  }, 0)
 
   function exitFullscreen() {
     if (document.exitFullscreen) {

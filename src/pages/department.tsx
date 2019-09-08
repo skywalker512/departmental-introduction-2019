@@ -16,7 +16,6 @@ import IconPhone from '@/assets/img/departmentIconPhone.png'
 import IconEarth from '@/assets/img/departmentIconEarth.png'
 import IconSre from '@/assets/img/departmentIconSre.png'
 import DepartmentSlider from '@/components/departmentSlider'
-import { Link } from 'react-router-dom'
 import useRouter from '@/utilites/useRouter'
 import { router } from 'umi'
 

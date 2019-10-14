@@ -141,12 +141,12 @@
 
 ## 图例
 
-![1571056351498](C:\Users\skywalker512\Desktop\code\departmental-introduction-2019\readme.assets\1571056351498.png)
+![1571056351498](./readme.assets/1571056351498.png)
 
-![1571056323010](C:\Users\skywalker512\Desktop\code\departmental-introduction-2019\readme.assets\1571056323010.png)
+![1571056323010](./readme.assets/1571056323010.png)
 
-![1571056385155](C:\Users\skywalker512\Desktop\code\departmental-introduction-2019\readme.assets\1571056385155.png)
+![1571056385155](./readme.assets/1571056385155.png)
 
-![1571056445014](C:\Users\skywalker512\Desktop\code\departmental-introduction-2019\readme.assets\1571056445014.png)
+![1571056445014](./readme.assets/1571056445014.png)
 
-![1571056459809](C:\Users\skywalker512\Desktop\code\departmental-introduction-2019\readme.assets\1571056459809.png)
+![1571056459809](./readme.assets/1571056459809.png)
